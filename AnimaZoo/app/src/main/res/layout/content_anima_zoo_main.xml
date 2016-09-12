@@ -27,22 +27,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/appTitle"
-        android:layout_marginTop="15dp">
-
-        <GridView
-            android:id="@+id/gridViewMenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnWidth="90dp"
-            android:gravity="center"
-            android:horizontalSpacing="10dp"
-            android:numColumns="2"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp">
-
-
-        </GridView>
+        android:layout_marginTop="15dp"
+        android:id="@+id/scrollView">
 
     </ScrollView>
+
+    <GridView
+        android:id="@+id/gridViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"
+        android:layout_alignTop="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+    </GridView>
 
 </RelativeLayout>

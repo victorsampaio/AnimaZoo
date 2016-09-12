@@ -54,9 +54,28 @@ public class AnimaZooMainActivity extends AppCompatActivity
                                     int position, long id) {
                 Toast.makeText(AnimaZooMainActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
+
+
+                switch (position) {
+                    case 0:
+                        Toast.makeText(AnimaZooMainActivity.this, "Mamifero" + position,
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                }
+
+
             }
         });
-
     }
 
     @Override
