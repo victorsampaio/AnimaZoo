@@ -18,6 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.MammalsScrollingActivity"
+            android:label="@string/title_activity_mammals_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.RepitileScrollingActivity"
+            android:label="@string/title_activity_repitile_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a03b983885f89ffea3e245d568bcb34bb1d3c26c" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

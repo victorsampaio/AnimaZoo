@@ -1,8 +1,11 @@
 package animazoo.com.br.animazoo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,14 +19,21 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import animazoo.com.br.animazoo.activities.MammalsScrollingActivity;
+import animazoo.com.br.animazoo.activities.RepitileScrollingActivity;
 import animazoo.com.br.animazoo.adapters.ImageAdapter;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class AnimaZooMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String DEBUG = "Debug: ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_anima_zoo_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,24 +62,43 @@ public class AnimaZooMainActivity extends AppCompatActivity
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(AnimaZooMainActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
-
+                //Toast.makeText(AnimaZooMainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
 
                 switch (position) {
                     case 0:
-                        Toast.makeText(AnimaZooMainActivity.this, "Mamifero" + position,
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.mammals,
                                 Toast.LENGTH_SHORT).show();
+                        Intent itMammals = new Intent(getApplicationContext(), MammalsScrollingActivity.class);
+                        startActivity(itMammals);
+
                         break;
                     case 1:
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.reptile,
+                                Toast.LENGTH_SHORT).show();
+                        Intent itRepitile = new Intent(getApplicationContext(), RepitileScrollingActivity.class);
+                        startActivity(itRepitile);
                         break;
                     case 2:
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.fish,
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.bugs,
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.birds,
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
+                        Log.d(DEBUG, "Position: " + position);
+                        Toast.makeText(AnimaZooMainActivity.this, R.string.amphibians,
+                                Toast.LENGTH_SHORT).show();
                         break;
                 }
 
